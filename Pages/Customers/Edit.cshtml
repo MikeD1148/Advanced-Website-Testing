@@ -1,0 +1,57 @@
+﻿@page
+@model Group_Project1.Pages.Customers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h1>:: Update Customer Page</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <input type="hidden" asp-for="CustomerRec.Id" />
+
+
+            <div class="form-group">
+                <label asp-for="CustomerRec.CustomerID" class="control-label"></label>
+                <input type="text" asp-for="CustomerRec.CustomerID" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CustomerRec.CustomerName" class="control-label"></label>
+                <input type="text" asp-for="CustomerRec.CustomerName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CustomerRec.CustomerLastName" class="control-label"></label>
+                <input type="text" asp-for="CustomerRec.CustomerLastName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CustomerRec.Email" class="control-label"></label>
+                <input type="text" asp-for="CustomerRec.Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerRec.Password" class="control-label"></label>
+                <input type="text" asp-for="CustomerRec.Password" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-dark" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
